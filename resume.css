@@ -1,0 +1,29 @@
+body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+}
+
+.header_element{
+	text-align: center;
+}
+
+.date{
+	text-align: center;
+}
+
+.experience{
+}
+
+.date{
+	background-color:  red;
+}
+
+.experience_header{
+	display: flex;
+	justify-content: space-between;
+}
+
+header{
+	border-bottom: 2px solid black;
+}
