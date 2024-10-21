@@ -13,5 +13,6 @@ fetch('template.json')
 		Header(data.contact);
 		Body(data.experiences);
 		Footer()
+		console.log(document);
 	})
 	.catch()

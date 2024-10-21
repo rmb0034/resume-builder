@@ -1,5 +1,10 @@
 {
+	"type":"engineering",
 	"title":"Graduate",
 	"location":"WVU",
-	"date":"6-2018"
+	"date":"6-2018",
+	"experience":[
+		"lol1",
+		"lol2"
+	]
 }

@@ -6,22 +6,19 @@ export const Header = (contact) => {
 }
 
 export const Body = (experience_type) => {
-	let titles = new Array();
 	let body = document.createElement('div');
+	let map = new Map();
 	body.className = "experience_body";
-	experience_type.forEach(name =>{
-		if(name) titles.push(
-			Title(name.replace(/^./,name[0].toUpperCase()) + ' Experience',
-						'experience_title')
-		);
+	experience_type.forEach(name => {
+		if(name) map.set(name,ExperienceSection(name));
 	});
-	titles.forEach(name => body.appendChild(name));
+	map.forEach((value) => body.appendChild(value));
 	document.body.appendChild(body);
 }
 
 export const Footer = () => {
 	let footer = document.createElement('footer');
-	footer.innerHTML = "FOOTER"
+	footer.innerHTML = "FOOTER";
 	document.body.appendChild(footer);
 }
 
@@ -31,6 +28,15 @@ export const Title = (text,className=null) => {
 	if(className) title.className = className;
 	return title;
 }
+
+export const ExperienceSection = (type) => {
+	let section = document.createElement('div');
+	section.appendChild(
+		Title(type.replace(/^./,type[0].toUpperCase()) + ' Experience',
+		'experience_title')
+	);
+	return section;
+};
 
 export const Date = (text) => {
 	let date = document.createElement('div');
