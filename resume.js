@@ -1,7 +1,7 @@
 import {
     Body,
     Footer,
-		Header
+    Header
 } from './elements.js';
 
 fetch('template.json')
@@ -15,4 +15,3 @@ fetch('template.json')
 		Footer()
 		console.log(document);
 	})
-	.catch()

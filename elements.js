@@ -35,6 +35,11 @@ export const ExperienceSection = (type) => {
 		Title(type.replace(/^./,type[0].toUpperCase()) + ' Experience',
 		'experience_title')
 	);
+	fetch('experiences')
+		.then( response => {
+			if(response.ok) return response.text()
+		})
+		.then( response => {console.log(response)});
 	return section;
 };
 
