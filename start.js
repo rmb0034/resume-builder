@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const util = require('./src/backend/util');
 
 const app = express();
 
@@ -7,21 +8,22 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname,'resume.html'));
 });
 
-const required_files = [
-	'resume.css',
-	'resume.js',
-	'elements.js',
-	'template.json'
-];
+const required_files = {
+	'resume.css':'',
+	'resume.js':'src/frontend',
+	'elements.js':'src/frontend',
+	'template.json':''
+}
 
-required_files.forEach( file_name => {
-	app.get('/'+file_name,(req,res) =>{
-		res.sendFile(path.join(__dirname,file_name))
+for(let file_name in required_files){
+	app.get('/'+file_name,(req,res) => {
+		res.sendFile(path.join(__dirname,required_files[file_name],file_name))
 	})
-});
+}
 
 app.get('/experiences',(req,res) => {
-	res.send('lolz');
+	console.log(util.get_experience_data(path.join(__dirname,'experiences')));
+	res.send(util.get_experience_data(path.join(__dirname,'experiences')));
 })
 
 app.listen(3000)

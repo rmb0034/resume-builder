@@ -12,6 +12,13 @@ export const Body = (experience_type) => {
 	experience_type.forEach(name => {
 		if(name) map.set(name,ExperienceSection(name));
 	});
+
+	fetch('experiences')
+		.then(response => {
+			if(response.ok) return response.text()
+		})
+		.then(response => {console.log(response)});
+
 	map.forEach((value) => body.appendChild(value));
 	document.body.appendChild(body);
 }
@@ -35,11 +42,6 @@ export const ExperienceSection = (type) => {
 		Title(type.replace(/^./,type[0].toUpperCase()) + ' Experience',
 		'experience_title')
 	);
-	fetch('experiences')
-		.then( response => {
-			if(response.ok) return response.text()
-		})
-		.then( response => {console.log(response)});
 	return section;
 };
 
@@ -74,4 +76,3 @@ export const Contact = (contact_items,className = null) => {
 	})
 	return contact;
 }
-
