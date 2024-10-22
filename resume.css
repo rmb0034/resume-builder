@@ -38,6 +38,12 @@ body {
 	justify-content: space-between;
 }
 
+.experience_list{
+	justify-content: space-between;
+	flex-grow: 0;
+	margin: 0;
+}
+
 header{
 	border-bottom: 2px solid black;
 	flex-grow:0;

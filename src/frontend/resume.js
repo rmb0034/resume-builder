@@ -2,7 +2,9 @@ import {
     Body,
     Footer,
     Header
-} from './elements.js';
+} from './sections.js';
+
+let section_promises = [];
 
 fetch('template.json')
 	.then(response=>{
@@ -10,8 +12,8 @@ fetch('template.json')
 			return response.json();
 		})
 	.then(data =>{
-		Header(data.contact);
-		Body(data.experiences);
-		Footer()
-		console.log(document);
+		let header_promise = Header(data.contact);
+		let body_promise = Body(data.experiences,header_promise);
+		Footer(body_promise);
 	})
+

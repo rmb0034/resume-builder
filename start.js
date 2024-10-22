@@ -12,6 +12,7 @@ const required_files = {
 	'resume.css':'',
 	'resume.js':'src/frontend',
 	'elements.js':'src/frontend',
+	'sections.js':'src/frontend',
 	'template.json':''
 }
 
@@ -22,7 +23,6 @@ for(let file_name in required_files){
 }
 
 app.get('/experiences',(req,res) => {
-	console.log(util.get_experience_data(path.join(__dirname,'experiences')));
 	res.send(util.get_experience_data(path.join(__dirname,'experiences')));
 })
 
