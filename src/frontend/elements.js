@@ -1,4 +1,3 @@
-
 export const Title = (text,className=null) => {
 	let title = document.createElement('div');
 	title.textContent = text;
@@ -14,6 +13,15 @@ export const ExperienceSection = (type) => {
 	);
 	return section;
 };
+
+export const Education = (info) => {
+	let education = document.createElement('div');
+	education.appendChild(Title(info.school + " | location"));
+	education.appendChild(Title(info.degree));
+	console.log(info)
+	if(info.additional) education.appendChild(Title(info.additional));
+	return education 
+}
 
 export const Experience = (info) => {
 	let experience = document.createElement('div');
@@ -46,6 +54,7 @@ const List = (items,className = null) => {
 	})
 	return list;
 }
+
 
 export const Contact = (contact_items,className = null) => {
 	let contact = document.createElement('div');

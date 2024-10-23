@@ -4,8 +4,6 @@ import {
     Header
 } from './sections.js';
 
-let section_promises = [];
-
 fetch('template.json')
 	.then(response=>{
 			if (!response.ok) throw new Error('Invalid template!');

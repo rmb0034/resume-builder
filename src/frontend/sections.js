@@ -9,20 +9,26 @@ export const Header = async (contact) => {
 
 export const Body = async (experience_type,header_promise) => {
 	let body = document.createElement('div');
-	let map = new Map();
+	let education_map = new Map();
 	body.className = "experience_body";
 	experience_type.forEach(name => {
-		if(name) map.set(name,elements.ExperienceSection(name));
+		if(name) education_map.set(name,elements.ExperienceSection(name));
 	});
-	await get_json_data()
+	await get_json_data('experiences')
 		.then(data => {
 			data.forEach(item => {
-				if(map.has(item.type)){
-					map.get(item.type).appendChild(elements.Experience(item));
+				if(education_map.has(item.type)){
+					education_map.get(item.type).appendChild(elements.Experience(item));
 				}
 			})
 		})
-	map.forEach((value) => body.appendChild(value));
+	await get_json_data('education')
+		.then(data => {
+			let education_section = elements.ExperienceSection("education");
+			data.forEach(item => {education_section.appendChild(elements.Education(item))});
+			body.appendChild(education_section)
+		});
+	education_map.forEach((value) => body.appendChild(value));
 	await header_promise.then(()=>{document.body.appendChild(body)});
 }
 
@@ -33,8 +39,9 @@ export const Footer = async (body_promise) => {
 	await body_promise.then(()=>{document.body.appendChild(footer)});
 }
 
-const get_json_data = async () => {
-	return fetch('/experiences').then(response => {
+const get_json_data = async (type) => {
+	return fetch('/' + type).then(response => {
+		console.log(response)
 				if(response.ok) return response.json()
 			})
 };
