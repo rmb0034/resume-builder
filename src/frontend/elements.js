@@ -1,47 +1,14 @@
-export const Title = (text,className=null) => {
-	let title = document.createElement('div');
-	title.textContent = text;
+
+function Element(type,className=null){
+	let title = document.createElement(type);
 	if(className) title.className = className;
 	return title;
 }
 
-export const ExperienceSection = (type) => {
-	let section = document.createElement('div');
-	section.appendChild(
-		Title(type.replace(/^./,type[0].toUpperCase()) + ' Experience',
-		'experience_title')
-	);
-	return section;
-};
-
-export const Education = (info) => {
-	let education = document.createElement('div');
-	education.appendChild(Title(info.school + " | location"));
-	education.appendChild(Title(info.degree));
-	console.log(info)
-	if(info.additional) education.appendChild(Title(info.additional));
-	return education 
-}
-
-export const Experience = (info) => {
-	let experience = document.createElement('div');
-	experience.className = "experience";
-
-	let experience_header = document.createElement('div');
-	experience_header.className = "experience_header";
-	experience_header.appendChild(Title(info.title + ' | ' + info.location));
-	experience_header.appendChild(Date(info.date));
-
-	experience.appendChild(experience_header);
-	experience.appendChild(List(info.experience,'experience_list'));
-	return experience;
-}
-
-const Date = (text) => {
-	let date = document.createElement('div');
-	date.className = "date";
-	date.textContent = text;
-	return date;
+export const Text = (string,className = null) =>{
+	let text = Element('div',className);
+	text.innerHTML = string;
+	return text;
 }
 
 const List = (items,className = null) => {
@@ -55,10 +22,48 @@ const List = (items,className = null) => {
 	return list;
 }
 
+export const ExperienceSection = (type) => {
+	let section = document.createElement('div');
+	section.appendChild(
+		Text(type.replace(/^./,type[0].toUpperCase()) + ' Experience',
+		'experience_title')
+	);
+	return section;
+};
+
+export const Education = (info) => {
+	let education = Element('div');
+	let header = Element('div','education_header');
+	header.appendChild(Text(info.school + " | location"));
+	header.appendChild(Text("Graduation:"+info.graduation));
+
+	let body = Element('div','education_body');
+	body.appendChild(Text(info.degree));
+	body.appendChild(Text('<b>GPA:</b> '+info.gpa));
+
+	education.appendChild(header);
+	education.appendChild(body);
+	if(info.additional) education.appendChild(Text(info.additional));
+	return education 
+}
+
+export const Experience = (info) => {
+	let experience = document.createElement('div');
+	experience.className = "experience";
+
+	let experience_header = document.createElement('div');
+	experience_header.className = "experience_header";
+	experience_header.appendChild(Text(info.title + ' | ' + info.location));
+	experience_header.appendChild(Text(info.date,'date'));
+
+	experience.appendChild(experience_header);
+	experience.appendChild(List(info.experience,'experience_list'));
+	return experience;
+} 
+
 
 export const Contact = (contact_items,className = null) => {
-	let contact = document.createElement('div');
-	if(className) contact.className = className;
+	let contact = Element('div',className);
 	let notFirst = false;
 	contact_items.forEach(c =>{
 		if(notFirst) contact.innerHTML += " | " 
@@ -67,3 +72,4 @@ export const Contact = (contact_items,className = null) => {
 	})
 	return contact;
 }
+

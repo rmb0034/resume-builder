@@ -10,8 +10,18 @@ fetch('template.json')
 			return response.json();
 		})
 	.then(data =>{
-		let header_promise = Header(data.contact);
-		let body_promise = Body(data.experiences,header_promise);
-		Footer(body_promise);
+		let resumes = document.getElementsByClassName('resume');
+		Promise
+			.all([Header(data.contact),
+						Body(data.experiences),
+						Footer()])
+			.then((els)=>{
+				for(let r of resumes){
+					let res_margin = document.createElement('div');
+					res_margin.className = "resume_margin";
+					els.forEach(el=>{res_margin.appendChild(el);});
+					r.appendChild(res_margin);
+				}
+			})
 	})
 

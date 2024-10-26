@@ -3,19 +3,40 @@
 }
 
 body {
-	font-family: Arial, sans-serif;
+	background: gray;
+}
+
+.resume_margin{
 	margin: var(--resume-margin);
-	line-height: 1.6;
-	display: flex;
-	flex-direction: column;
 	height: calc(100vh - 2*var(--resume-margin));
 }
 
-.experience_body{
-	display: flex;
+.resume{
+	background-color: white;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
 	flex-direction: column;
-	flex-grow: 1;
-	justify-content: space-evenly;
+	display: flex;
+	width: 210mm; /* A4 width */
+	height: 297mm; /* A4 height */
+}
+
+header{
+	border-bottom: 2px solid black;
+	flex-grow:0;
+}
+
+footer{
+	flex-grow:0;
+}
+
+.education_experience{
+	display: flex;
+}
+
+.education_header, .education_body{
+	justify-content: space-between;
+	display: flex;
 }
 
 .header_element{
@@ -30,8 +51,11 @@ body {
 	text-decoration: underline;
 }
 
-.date{
-	background-color:  red;
+.experience_body{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: space-evenly;
 }
 
 .experience_header{
@@ -45,13 +69,4 @@ body {
 	padding-left: 0;
 	margin:0;
 	list-style-position: inside;
-}
-
-header{
-	border-bottom: 2px solid black;
-	flex-grow:0;
-}
-
-footer{
-	flex-grow:0;
 }

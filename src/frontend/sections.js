@@ -2,12 +2,12 @@ import * as elements from './elements.js'
 
 export const Header = async (contact) => {
 	let header = document.createElement('header');
-	header.appendChild(elements.Title('R. Michael Butts','header_element'));
+	header.appendChild(elements.Text('R. Michael Butts','header_element'));
 	header.appendChild(elements.Contact(contact,'header_element'));
-	document.body.appendChild(header);
+	return header;
 }
 
-export const Body = async (experience_type,header_promise) => {
+export const Body = async (experience_type) => {
 	let body = document.createElement('div');
 	let education_map = new Map();
 	body.className = "experience_body";
@@ -29,19 +29,18 @@ export const Body = async (experience_type,header_promise) => {
 			body.appendChild(education_section)
 		});
 	education_map.forEach((value) => body.appendChild(value));
-	await header_promise.then(()=>{document.body.appendChild(body)});
+	return body;
 }
 
-export const Footer = async (body_promise) => {
+export const Footer = async () => {
 	let footer = document.createElement('footer');
 	footer.innerHTML = "FOOTER";
 	document.body.appendChild(footer);
-	await body_promise.then(()=>{document.body.appendChild(footer)});
+	return footer;
 }
 
 const get_json_data = async (type) => {
 	return fetch('/' + type).then(response => {
-		console.log(response)
 				if(response.ok) return response.json()
 			})
 };

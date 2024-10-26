@@ -2,14 +2,14 @@
 	{
 		"school":"WVU",
 		"degree":"EE",
-		"gpa":"",
-		"graduation":"",
-		"additional":"<u>test<u>"
+		"gpa":"4.0",
+		"graduation":"kjsh",
+		"additional":"<b>test</b>"
 	},
 	{
 		"school":"WVU",
 		"degree":"EE",
-		"gpa":"",
-		"graduation":""
+		"gpa":"3.97",
+		"graduation":"lol"
 	}
 ]
