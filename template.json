@@ -8,5 +8,11 @@
 		"research",
 		"professional",
 		"leadership"
+	],
+	"skills":[
+		"python",
+		"c++",
+		"c",
+		"javascript"
 	]
 }

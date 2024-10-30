@@ -14,7 +14,7 @@ fetch('template.json')
 		Promise
 			.all([Header(data.contact),
 						Body(data.experiences),
-						Footer()])
+						Footer(data.skills)])
 			.then((els)=>{
 				for(let r of resumes){
 					let res_margin = document.createElement('div');

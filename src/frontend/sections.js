@@ -32,10 +32,10 @@ export const Body = async (experience_type) => {
 	return body;
 }
 
-export const Footer = async () => {
+export const Footer = async (skills) => {
 	let footer = document.createElement('footer');
-	footer.innerHTML = "FOOTER";
-	document.body.appendChild(footer);
+	footer.appendChild(elements.Text('Skills','experience_title'));
+	footer.appendChild(elements.Text(skills.join(' | ')));
 	return footer;
 }
 

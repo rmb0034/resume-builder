@@ -60,7 +60,6 @@ const valid_data = (data,type) => {
 			break;
 		}
 		default: {
-
 			return false;
 		} 
 	}
