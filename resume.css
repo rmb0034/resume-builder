@@ -1,9 +1,11 @@
 :root {
-	--resume-margin: 20px;
+	--resume-margin: 15mm;
 }
 
 body {
 	background: gray;
+	margin: 0;
+	font-size: 14px;
 }
 
 .resume_margin{
@@ -17,8 +19,8 @@ body {
 	line-height: 1.6;
 	flex-direction: column;
 	display: flex;
-	width: 210mm; /* A4 width */
-	height: 297mm; /* A4 height */
+	width: 210mm; 
+	height: 297mm; 
 }
 
 header{
@@ -45,9 +47,11 @@ footer{
 
 .date{
 	text-align: center;
+	font-weight: normal;
 }
 
 .experience_title{
+	font-weight: bold;
 	text-decoration: underline;
 }
 
@@ -59,6 +63,7 @@ footer{
 }
 
 .experience_header{
+	font-weight: bold;
 	display: flex;
 	justify-content: space-between;
 }
