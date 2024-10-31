@@ -2,7 +2,7 @@ import * as elements from './elements.js'
 
 export const Header = async (contact) => {
 	let header = document.createElement('header');
-	header.appendChild(elements.Text('R. Michael Butts','header_element'));
+	header.appendChild(elements.Text('R. Michael Butts','header_title'));
 	header.appendChild(elements.Contact(contact,'header_element'));
 	return header;
 }

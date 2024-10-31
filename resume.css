@@ -1,31 +1,33 @@
 :root {
 	--resume-margin: 15mm;
+	--font-size: 3.8mm;
 }
 
-body {
+body{
 	background: gray;
-	margin: 0;
-	font-size: 14px;
+	font-size: var(--font-size);
+	margin: 0
 }
 
 .resume_margin{
 	margin: var(--resume-margin);
-	height: calc(100vh - 2*var(--resume-margin));
+	height: calc(100vh - 2*var(--resume-margin))
 }
 
 .resume{
 	background-color: white;
-	font-family: Arial, sans-serif;
+	font-family: "Times New Roman", Times, serif;
 	line-height: 1.6;
 	flex-direction: column;
 	display: flex;
 	width: 210mm; 
-	height: 297mm; 
+	height: 297mm 
 }
 
 header{
 	border-bottom: 2px solid black;
 	flex-grow:0;
+	padding:1mm
 }
 
 footer{
@@ -41,8 +43,19 @@ footer{
 	display: flex;
 }
 
+.education_title{
+	font-weight: bold;
+	font-size: 4mm;
+}
+
 .header_element{
 	text-align: center;
+}
+
+.header_title{
+	text-align: center;
+	font-weight: bold;
+	font-size: 5.5mm;
 }
 
 .date{
@@ -52,6 +65,7 @@ footer{
 
 .experience_title{
 	font-weight: bold;
+	font-size: 4.2mm;
 	text-decoration: underline;
 }
 
@@ -72,6 +86,7 @@ footer{
 	justify-content: space-between;
 	flex-grow: 0;
 	padding-left: 0;
-	margin:0;
-	list-style-position: inside;
+	margin: 0;
+	list-style-position: outside;
+	margin-left: var(--font-size);
 }

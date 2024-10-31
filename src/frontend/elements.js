@@ -34,11 +34,11 @@ export const ExperienceSection = (type) => {
 export const Education = (info) => {
 	let education = Element('div');
 	let header = Element('div','education_header');
-	header.appendChild(Text(info.school + " | location"));
-	header.appendChild(Text("Graduation:"+info.graduation));
+	header.appendChild(Text(info.degree,'education_title'));
+	header.appendChild(Text('<b>Graduation: </b>'+ info.graduation));
 
 	let body = Element('div','education_body');
-	body.appendChild(Text(info.degree));
+	body.appendChild(Text(info.school));
 	body.appendChild(Text('<b>GPA:</b> '+info.gpa));
 
 	education.appendChild(header);
