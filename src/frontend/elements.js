@@ -22,10 +22,10 @@ const List = (items,className = null) => {
 	return list;
 }
 
-export const ExperienceSection = (type) => {
+export const ExperienceSection = (type, say_experience = true) => {
 	let section = document.createElement('div');
 	section.appendChild(
-		Text(type.replace(/^./,type[0].toUpperCase()) + ' Experience',
+		Text(type.replace(/^./,type[0].toUpperCase()) + ((say_experience) ? ' Experience': ''),
 		'experience_title')
 	);
 	return section;

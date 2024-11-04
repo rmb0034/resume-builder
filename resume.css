@@ -1,5 +1,5 @@
 :root {
-	--resume-margin: 15mm;
+	--resume-margin: 10mm;
 	--font-size: 3.8mm;
 }
 
@@ -11,7 +11,9 @@ body{
 
 .resume_margin{
 	margin: var(--resume-margin);
-	height: calc(100vh - 2*var(--resume-margin))
+	height: calc(100vh - 2*var(--resume-margin));
+	flex-direction: column;
+	display: flex;
 }
 
 .resume{
@@ -20,8 +22,8 @@ body{
 	line-height: 1.6;
 	flex-direction: column;
 	display: flex;
-	width: 210mm; 
-	height: 297mm 
+	width: 215.9mm; 
+	height: 279.4mm 
 }
 
 header{
@@ -55,7 +57,7 @@ footer{
 .header_title{
 	text-align: center;
 	font-weight: bold;
-	font-size: 5.5mm;
+	font-size: 5.2mm;
 }
 
 .date{
@@ -64,6 +66,7 @@ footer{
 }
 
 .experience_title{
+	max-height: 1.25em;
 	font-weight: bold;
 	font-size: 4.2mm;
 	text-decoration: underline;

@@ -14,7 +14,7 @@ export const Body = async (experience_type) => {
 	experience_type.forEach(name => {
 		if(name) education_map.set(name,elements.ExperienceSection(name));
 	});
-	await get_json_data('experiences')
+	get_json_data('experiences')
 		.then(data => {
 			data.forEach(item => {
 				if(education_map.has(item.type)){
@@ -24,7 +24,7 @@ export const Body = async (experience_type) => {
 		})
 	await get_json_data('education')
 		.then(data => {
-			let education_section = elements.ExperienceSection("education");
+			let education_section = elements.ExperienceSection("education",false);
 			data.forEach(item => {education_section.appendChild(elements.Education(item))});
 			body.appendChild(education_section)
 		});
