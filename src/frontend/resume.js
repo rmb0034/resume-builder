@@ -17,10 +17,7 @@ fetch('template')
 						Footer(data.skills)])
 			.then((els)=>{
 				for(let r of resumes){
-					let res_margin = document.createElement('div');
-					res_margin.className = "resume_margin";
-					els.forEach(el=>{res_margin.appendChild(el);});
-					r.appendChild(res_margin);
+					els.forEach(el=>{r.appendChild(el);});
 				}
 			})
 	})

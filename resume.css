@@ -9,14 +9,10 @@ body{
 	margin: 0
 }
 
-.resume_margin{
-	margin: var(--resume-margin);
-	height: calc(100vh - 2*var(--resume-margin));
-	flex-direction: column;
-	display: flex;
-}
 
 .resume{
+	padding: var(--resume-margin);
+	padding-top: 5mm;
 	background-color: white;
 	font-family: "Times New Roman", Times, serif;
 	line-height: 1.6;
@@ -44,6 +40,9 @@ footer{
 	justify-content: space-between;
 	display: flex;
 }
+.education_body{
+	line-height: 1em;
+}
 
 .education_title{
 	font-weight: bold;
@@ -57,7 +56,8 @@ footer{
 .header_title{
 	text-align: center;
 	font-weight: bold;
-	font-size: 5.2mm;
+	font-size: 5.4mm;
+	line-height: 1.1em;
 }
 
 .date{
@@ -89,6 +89,7 @@ footer{
 	justify-content: space-between;
 	flex-grow: 0;
 	padding-left: 0;
+	padding-right: 5mm;
 	margin: 0;
 	list-style-position: outside;
 	margin-left: var(--font-size);

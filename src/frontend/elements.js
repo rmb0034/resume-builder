@@ -22,14 +22,6 @@ const List = (items,className = null) => {
 	return list;
 }
 
-export const ExperienceSection = (type, say_experience = true) => {
-	let section = document.createElement('div');
-	section.appendChild(
-		Text(type.replace(/^./,type[0].toUpperCase()) + ((say_experience) ? ' Experience': ''),
-		'experience_title')
-	);
-	return section;
-};
 
 export const Education = (info) => {
 	let education = Element('div');
@@ -46,6 +38,13 @@ export const Education = (info) => {
 	if(info.additional) education.appendChild(Text(info.additional));
 	return education 
 }
+
+export const ExperienceSection = (type, say_experience = true) => {
+	let section = document.createElement('div');
+	section.appendChild(
+		Text(type.replace(/\b(?!and\b)\w/g, char => char.toUpperCase()) + ((say_experience) ? ' Experience': ''),'experience_title'));
+	return section;
+};
 
 export const Experience = (info) => {
 	let experience = document.createElement('div');

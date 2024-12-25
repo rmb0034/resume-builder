@@ -35,7 +35,6 @@ export const get_json = async (dir,type) => {
 	try {
 		let json_data = JSON.parse(fs.readFileSync(dir));
 		if(valid_data(json_data,type)) return json_data;
-		
 	} catch(error) { 
 		console.error(`Invalid json at ${dir}`);
 	}

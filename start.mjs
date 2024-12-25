@@ -16,4 +16,5 @@ if(valid_resume_dir(__cwd)){
 		console.log(error)
 	}
 }
+
 else console.log("Invalid Resume Directory!");
