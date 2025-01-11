@@ -3,6 +3,11 @@
 	--font-size: 3.8mm;
 }
 
+@page {
+  size: portrait; /* Explicitly define the page size */
+  margin: 0; /* Remove page margins */
+}
+
 body{
 	background: gray;
 	font-size: var(--font-size);
@@ -11,15 +16,15 @@ body{
 
 
 .resume{
+	  box-sizing: border-box; /* Ensure padding is included in dimensions */
 	padding: var(--resume-margin);
-	padding-top: 5mm;
+	padding-top: 4mm;
 	background-color: white;
 	font-family: "Times New Roman", Times, serif;
 	line-height: 1.6;
 	flex-direction: column;
-	display: flex;
 	width: 215.9mm; 
-	height: 279.4mm 
+	height: 279.4mm; 
 }
 
 header{
@@ -30,10 +35,12 @@ header{
 
 footer{
 	flex-grow:0;
+	line-height: 1.3em;
 }
 
 .education_experience{
 	display: flex;
+	line-height: 1em;
 }
 
 .education_header, .education_body{
@@ -76,6 +83,7 @@ footer{
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
+	box-sizing: border-box; /* Ensure padding is included in dimensions */
 	justify-content: space-evenly;
 }
 
@@ -91,6 +99,7 @@ footer{
 	padding-left: 0;
 	padding-right: 5mm;
 	margin: 0;
+	line-height: 1.35em;
 	list-style-position: outside;
 	margin-left: var(--font-size);
 }

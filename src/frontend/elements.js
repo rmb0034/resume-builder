@@ -39,10 +39,10 @@ export const Education = (info) => {
 	return education 
 }
 
-export const ExperienceSection = (type, say_experience = true) => {
+export const ExperienceSection = (type) => {
 	let section = document.createElement('div');
 	section.appendChild(
-		Text(type.replace(/\b(?!and\b)\w/g, char => char.toUpperCase()) + ((say_experience) ? ' Experience': ''),'experience_title'));
+		Text(type.replace(/\b(?!and\b)\w/g, char => char.toUpperCase()) ,'experience_title'));
 	return section;
 };
 
